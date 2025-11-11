@@ -9,7 +9,7 @@ export async function apiFetch(endpoint: string, options: RequestInit = {}) {
     ...(options.headers || {}),
   };
 
-  const response = await fetch(`http://localhost:3001${endpoint}`, {
+  const response = await fetch(`http://ec2-13-233-132-250.ap-south-1.compute.amazonaws.com:3001${endpoint}`, {
     ...options,
     headers,
   });
