@@ -19,8 +19,11 @@ model Study {
   id            Int      @id @default(autoincrement())
   study_uid     String   @unique
   accession     String?
+  patient_id    String?
   patient_age   Int?
   patient_sex   String?
+  patient_race  String?
+  patient_ethnicity String?
   site_id       String?
   scanner_make  String?
   scanner_model String?
@@ -37,6 +40,7 @@ model AIOutput {
   study_id   Int
   finding    String
   confidence Float
+  summary    String?
   created_at DateTime @default(now())
 
   // Relation
@@ -50,6 +54,7 @@ model GroundTruth {
   id         Int      @id @default(autoincrement())
   study_id   Int
   finding    String
+  pneumothorax_flag Int?
   created_at DateTime @default(now())
 
   // Relation
@@ -76,6 +81,8 @@ model ComparisonResult {
   study_id      Int
   model_name    String?    // ✅ added
   model_version String?    // ✅ added
+  cohort_pneumothorax String?
+  provenance  String?
   precision     Float
   recall        Float
   f1_score      Float

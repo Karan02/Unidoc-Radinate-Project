@@ -1,28 +1,31 @@
-import React, { useState } from 'react';
-import { Sun, Moon } from 'lucide-react'; // Import the icons you want to use
+import React, { useEffect, useState } from 'react';
+import { Sun, Moon } from 'lucide-react'; 
 
 const ToggleDarkMode = () => {
-  // Use the useState hook to manage the toggle state (e.g., dark mode enabled or not)
   const [isDarkMode, setIsDarkMode] = useState(false);
+  const [theme, setTheme] = useState('light');
 
-  // Function to handle the toggle action
+  useEffect(() => {
+    document.body.className = `${theme}-theme`;
+  }, [theme]);
+
   const handleToggle = () => {
-    setIsDarkMode(!isDarkMode); // Toggle the boolean state
+    setIsDarkMode(!isDarkMode);
+    // setTheme(currentTheme => (currentTheme === 'light' ? 'dark' : 'light'));
   };
 
   return (
     <button
       onClick={handleToggle}
       className={`p-2 rounded-full transition-colors ${
-        isDarkMode ? 'bg-gray-800 text-blue-400' : 'bg-gray-200 text-gray-800'
+        isDarkMode ? 'bg-gray-800 text-yellow-100' : 'bg-gray-200 text-gray-800'
       }`}
       aria-label="Toggle dark mode"
     >
-      {/* Conditionally render the Sun or Moon icon based on the state */}
       {isDarkMode ? (
-        <Sun className="h-4 w-4" /> // Icon when toggled ON (dark mode)
+        <Sun className="h-4 w-4" />
       ) : (
-        <Moon className="h-4 w-4" /> // Icon when toggled OFF (light mode)
+        <Moon className="h-4 w-4" /> 
       )}
     </button>
   );

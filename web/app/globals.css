@@ -3,3 +3,32 @@
 @tailwind utilities;
 html, body, #__next { height: 100%; }
 body { font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+
+/* Define variables for the light theme */
+:root, .light-theme {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --button-bg: #f0f0f0;
+}
+
+/* Define variables for the dark theme */
+.dark-theme {
+  --bg-color: #1a1a1a;
+  --text-color: #ffffff;
+  --button-bg: #333333;
+}
+
+/* Apply variables to general elements */
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.app-container main button {
+  background-color: var(--button-bg);
+  color: var(--text-color);
+  border: 1px solid var(--text-color);
+  padding: 8px 16px;
+  cursor: pointer;
+}
