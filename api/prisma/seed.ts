@@ -4,7 +4,7 @@ import * as bcrypt from 'bcryptjs';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Starting RadiNate seed process...\n');
+  console.log('🌱 Starting Radinate seed process...\n');
 
   // ------------------------------
   // 1️⃣ Create Roles

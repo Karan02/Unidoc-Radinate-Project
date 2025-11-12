@@ -14,11 +14,25 @@ export async function apiFetch(endpoint: string, options: RequestInit = {}) {
     headers,
   });
 
+    // Detect content type
+  const contentType = response.headers.get('content-type') || '';
+
+  // If it's JSON
+  if (contentType.includes('application/json')) {
+    const data = await response.json();
+    if (!response.ok) {
+      // Try to show detailed error from backend
+      const message = data?.message || response.statusText;
+      throw new Error(`API Error: ${message}`);
+    }
+    return data; // ✅ normal API calls work
+  }
+
   if (!response.ok) {
     const error = await response.text();
     console.error(`❌ API error [${endpoint}]:`, error);
     throw new Error(`API error: ${response.status} ${response.statusText}`);
   }
 
-  return response.json();
+  return response;
 }

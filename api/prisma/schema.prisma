@@ -1,5 +1,5 @@
 // ---------------------------------------------
-// Prisma schema for RadiNate backend
+// Prisma schema for Radinate backend
 // ---------------------------------------------
 
 generator client {

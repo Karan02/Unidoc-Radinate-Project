@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import { useAuth } from '@/context/AuthContext';
+import { apiFetch } from '@/lib/api';
 
 export default function LoginPage() {
   const { login } = useAuth();
@@ -11,13 +12,14 @@ export default function LoginPage() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    const res = await fetch('http://localhost:3001/auth/login', {
+    const res = await apiFetch('/auth/login', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email, password }),
     });
 
-    const data = await res.json();
+    // const data = await res.json();
+    const data = res;
 
     if (data.access_token || data.token || data.accessToken) {
       const token = data.access_token || data.token || data.accessToken;
@@ -39,7 +41,7 @@ export default function LoginPage() {
         onSubmit={handleSubmit}
         className="bg-white shadow-lg rounded-lg p-6 w-full max-w-sm"
       >
-        <h2 className="text-2xl font-bold mb-4 text-center">RadiNate Login</h2>
+        <h2 className="text-2xl font-bold mb-4 text-center">Radinate Login</h2>
         <input
           type="email"
           placeholder="Email"

@@ -17,7 +17,7 @@ import { Scale, TrendingUp, TrendingDown, Info } from 'lucide-react';
 import { Card } from '@/components/ui/Card';
 import { FairnessTable } from '@/components/FairnessTable';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
-import { DashboardLayout } from '../page';
+
 import { apiFetch } from '@/lib/api';
 
 type FairnessData = {
@@ -69,7 +69,7 @@ export default function FairnessPage() {
 
   return (
           <ProtectedRoute allowedRoles={["CFO", "Chief Risk Officer", "CMIO", "Radiology Lead"]}>
-      <DashboardLayout>
+      
         {loading ? (
       <div className="flex items-center justify-center min-h-screen text-gray-500">
         Loading fairness metrics...
@@ -110,7 +110,7 @@ export default function FairnessPage() {
       ) : (
         <p className="text-gray-500">No fairness data available.</p>
       )}
-    </div>  </DashboardLayout></ProtectedRoute>
+    </div>  </ProtectedRoute>
   );
 }
 

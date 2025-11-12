@@ -38,7 +38,7 @@ export default function AlertsPage() {
 
   return (
       <ProtectedRoute allowedRoles={['CMIO', 'Chief Risk Officer','Radiology Lead']}>
-        <DashboardLayout>
+        
           {loading ? (
       <div className="flex items-center justify-center min-h-screen text-gray-500">
         Loading alerts...
@@ -109,7 +109,7 @@ export default function AlertsPage() {
         </div>
       )}
     </div>
-    </DashboardLayout> </ProtectedRoute>
+     </ProtectedRoute>
   );
 }
 

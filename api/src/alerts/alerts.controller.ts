@@ -63,7 +63,7 @@ export class AlertsController {
     const testAlert = await this.prisma.alert.create({
       data: {
         type: 'system',
-        message: 'This is a test alert from RadiNate API',
+        message: 'This is a test alert from Radinate API',
         severity: 'info',
       },
     });

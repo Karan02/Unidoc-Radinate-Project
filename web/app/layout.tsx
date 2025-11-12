@@ -1,7 +1,11 @@
-import './globals.css'
-import { AuthProvider } from '@/context/AuthContext'
+// app/layout.tsx
+import './globals.css';
+import { AuthProvider } from '@/context/AuthContext';
 
-export const metadata = { title: 'RadiNate Frontend', description: 'RadiNate dashboard with auth and RBAC' }
+export const metadata = {
+  title: 'Radinate Frontend',
+  description: 'Radinate dashboard with auth and RBAC',
+};
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
@@ -10,5 +14,5 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <AuthProvider>{children}</AuthProvider>
       </body>
     </html>
-  )
+  );
 }

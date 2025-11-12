@@ -2,7 +2,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 async function main() {
-  console.log('🌱 Starting RadiNate seed...\n');
+  console.log('🌱 Starting Radinate seed...\n');
 
   // ------------------------------
   // 1️⃣ Seed Studies

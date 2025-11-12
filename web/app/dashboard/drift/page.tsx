@@ -4,7 +4,7 @@ import { JSX, useEffect, useState } from 'react';
 import { apiFetch } from '@/lib/api';
 import { Activity, TrendingUp, TrendingDown, AlertTriangle, Info } from 'lucide-react';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
-import { DashboardLayout } from '../page';
+
 
 export default function DriftPage() {
   const [signals, setSignals] = useState<any[]>([]);
@@ -38,7 +38,7 @@ export default function DriftPage() {
 
   return (
     <ProtectedRoute allowedRoles={['CMIO', 'Chief Risk Officer']}>
-      <DashboardLayout>
+      
     <div className="p-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
@@ -103,7 +103,7 @@ export default function DriftPage() {
         </div>
       )}
     </div>
-    </DashboardLayout>
+    
   </ProtectedRoute>
   );
 }

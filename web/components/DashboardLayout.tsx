@@ -65,7 +65,7 @@ export function DashboardLayout({ children }: { children: React.ReactNode }) {
       {/* Sidebar */}
       <aside className="w-64 bg-gray-100 border-r p-6 flex flex-col justify-between">
         <div>
-          <h2 className="text-xl font-bold mb-6">RadiNate</h2>
+          <h2 className="text-xl font-bold mb-6">Radinate</h2>
           <ul className="space-y-2">
             {links.map((link) => (
               <li key={link.href}>

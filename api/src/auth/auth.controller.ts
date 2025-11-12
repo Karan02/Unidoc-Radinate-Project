@@ -24,7 +24,7 @@ export class AuthController {
         email: user.email,
         role: user.role.name,
       },
-      process.env.JWT_SECRET || 'radiNateSecret',
+      process.env.JWT_SECRET || 'RadinateSecret',
       { expiresIn: '1d' }
     );
 

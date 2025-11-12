@@ -12,7 +12,7 @@ import {
   Info,
 } from 'lucide-react';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
-import DashboardLayout from '../page';
+
 
 export default function ModelsPage() {
   const [models, setModels] = useState<any[]>([]);
@@ -46,7 +46,7 @@ export default function ModelsPage() {
 
   return (
          <ProtectedRoute allowedRoles={['CMIO', 'Chief Risk Officer', 'Radiology Lead']}>
-            <DashboardLayout>
+            
     <div className="p-6">
       {/* Header */}
       <div className="flex items-center justify-between mb-6">
@@ -108,7 +108,7 @@ export default function ModelsPage() {
         </div>
       )}
     </div>
-    </DashboardLayout> </ProtectedRoute>
+     </ProtectedRoute>
   );
 }
 

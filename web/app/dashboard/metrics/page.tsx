@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { apiFetch } from '@/lib/api';
 import { ProtectedRoute } from '@/components/ProtectedRoute';
-import { DashboardLayout } from '../page';
+
 
 export default function MetricsPage() {
   const [jobs, setJobs] = useState<any[]>([]);
@@ -36,7 +36,7 @@ export default function MetricsPage() {
 
   return (
     <ProtectedRoute allowedRoles={['CMIO', 'Chief Risk Officer', 'Radiology Lead']}>
-    <DashboardLayout>
+    
       {loading ? (
       <div className="flex items-center justify-center min-h-screen text-gray-500">
         Loading metrics...
@@ -78,6 +78,6 @@ export default function MetricsPage() {
         </table>
       )}
     </div>
-    </DashboardLayout></ProtectedRoute>
+    </ProtectedRoute>
   );
 }
