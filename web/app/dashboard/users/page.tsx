@@ -47,12 +47,7 @@ export default function UsersPage() {
   const [roleId, setRoleId] = useState<number | null>(null);
   const [loading, setLoading] = useState(true);
   const [message, setMessage] = useState('');
-
-  // ✅ Fetch roles and users
-  useEffect(() => {
-    if (!token) return;
-
-    const fetchData = async () => {
+const fetchData = async () => {
       try {
         const [rolesRes, usersRes] = await Promise.all([
           fetch(`${process.env.NEXT_PUBLIC_API_URL}/rbac/roles`, {
@@ -73,6 +68,11 @@ export default function UsersPage() {
         setLoading(false);
       }
     };
+  // ✅ Fetch roles and users
+  useEffect(() => {
+    if (!token) return;
+
+    
 
     fetchData();
   }, [token]);
@@ -104,6 +104,7 @@ export default function UsersPage() {
       } else {
         setMessage(data.message || 'Error creating user');
       }
+      fetchData();
     } catch (err) {
       console.error(err);
       setMessage('Error creating user.');
