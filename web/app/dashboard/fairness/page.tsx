@@ -101,7 +101,8 @@ export default function FairnessPage() {
    Δ Bias Badge (Dark Mode)
 -------------------------- */
 
-export function StatusBadge({ delta }: { delta: number }) {
+// export
+ function StatusBadge({ delta }: { delta: number }) {
   if (delta > 0.05)
     return (
       <span className="flex items-center gap-1 bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300 border border-green-300 dark:border-green-700 px-2 py-1 rounded-full text-xs font-medium">

@@ -3,7 +3,7 @@ import { ThemeProvider } from '@/context/ThemeContext';
 import './globals.css';
 import { AuthProvider } from '@/context/AuthContext';
 
-export const metadata = {
+const metadata = {
   title: 'Radinate Frontend',
   description: 'Radinate dashboard with auth and RBAC',
 };

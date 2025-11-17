@@ -14,6 +14,7 @@ const roleRoutes: Record<string, { label: string; href: string }[]> = {
     { label: 'Fairness Monitor', href: '/fairness' },
     { label: 'Alerts Center', href: '/alerts' },
     { label: 'RBAC Users', href: '/users' },
+    { label: 'Exports', href: '/exports' },
   ],
   'Chief Risk Officer': [
     { label:  'Performance Metrics', href: '/metrics' },
