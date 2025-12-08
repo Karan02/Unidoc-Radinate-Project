@@ -14,10 +14,14 @@ async function bootstrap() {
   app.useGlobalPipes(new ValidationPipe({ whitelist: true }));
   // await app.listen(3001,'0.0.0.0');
   app.enableCors({
-    origin: ['http://radinate-frontend-bucket.s3-website-us-east-1.amazonaws.com/','http://localhost:3000'],
-    credentials: true
+  origin: ['http://radinate-frontend-bucket.s3-website-us-east-1.amazonaws.com/','http://localhost:3000'], // or origin: true for testing
+  methods: ['GET','POST','PUT','PATCH','DELETE','OPTIONS'],
+  allowedHeaders: ['Content-Type','Authorization','X-Requested-With'],
+  credentials: true,
+  preflightContinue: false, // Nest will respond to OPTIONS itself
+  optionsSuccessStatus: 204, // same as your Express behavior
   });
-  await app.getHttpServer().listen(3001);
+  await app.getHttpServer().listen(3001,'0.0.0.0');
   console.log('API listening on http://localhost:3001');
 }
 bootstrap();
